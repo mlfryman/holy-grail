@@ -2,14 +2,16 @@ doctype html
 html(lang='en')
   head
     meta(charset='utf-8')
-    meta(http-equiv='X-UA-Compatible', content='IE=edge')
-    meta(name='viewport', content='width=device-width, initial-scale=1')
-    title Express.js Template
-    link(href='/bootstrap/css/bootstrap.min.css', rel='stylesheet')
+    meta(http-equiv='X-UA-Compatible' content='IE=edge')
+    meta(name='viewport' content='width=device-width, initial-scale=1')
+    title Treasure Map
+    link(href='//maxcdn.bootstrapcdn.com/bootswatch/3.2.0/flatly/bootstrap.min.css', rel='stylesheet')
     link(rel='stylesheet', href='/css/style.css')
   body
-    include nav
-    .container
+    .container-fluid
+      .row
+        .col-xs-12
+          include nav
       .row
         .col-xs-12
           block content
@@ -17,8 +19,10 @@ html(lang='en')
     script(src='/js/vendor/jquery-2.1.1.min.js')
     script(src='/js/vendor/lodash.min.js')
     script(src='/js/vendor/moment.min.js')
+    // imports bootstrap files
     script(src='/bootstrap/js/bootstrap.min.js')
+    // downloads Google maps API js file
+    script(src='https://maps.googleapis.com/maps/api/js?key=AIzaSyCtYJhWqJxMWkjJuuiD0vR-1K1DL3o8T_0&sensor=true')
     script(src='/js/user/main.js')
 
     block scripts
-

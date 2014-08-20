@@ -1,0 +1,33 @@
+{
+  "_id":{"$oid":"100000000000000000000001"},
+  "name":"fancy wool",
+  "loc":{"name":"Reykjavíc, Iceland", "lat":64.133333, "lng":-21.933333},
+  "difficulty":1,
+  "order":1,
+  "photos":["wool1.jpg", "wool2.jpg"],
+  "hint":["hint1", "hint2", "hint3"],
+  "tags":["tag1", "tag2", "tag3"],
+  "_isFound":true
+}
+{
+  "_id":{"$oid":"100000000000000000000002"},
+  "name":"gold",
+  "loc":{"name":"Manila, Phillippines", "lat":14.583333, "lng":120.966667},
+  "difficulty":3,
+  "order":3,
+  "photos":["gold.jpg"],
+  "hint":["hint1", "hint2", "hint3"],
+  "tags":["tag1", "tag2", "tag3"],
+  "_isFound":false
+}
+{
+  "_id":{"$oid":"100000000000000000000003"},
+  "name":"weed",
+  "loc":{"name":"Amsterdam, Netherlands", "lat":52.366667, "lng":4.9},
+  "difficulty":2,
+  "order":2,
+  "photos":["weed.jpg"],
+  "hint":["hint1", "hint2", "hint3"],
+  "tags":["tag1", "tag2", "tag3"],
+  "_isFound":false
+}
