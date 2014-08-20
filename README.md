@@ -1,10 +1,10 @@
-## name of project
+## Treasure Map
 ### Code Badges
-build status icon
-coverage status icon
+[![Build Status](https://travis-ci.org/mlfryman/treasure-map.svg)](https://travis-ci.org/mlfryman/treasure-map)
+[![Coverage Status](https://coveralls.io/repos/mlfryman/treasure-map/badge.png)](https://coveralls.io/r/mlfryman/treasure-map)
 
 ### About
-write a description about your project
+Find the treasure!
 
 ### Models
 ```
@@ -15,18 +15,17 @@ prop-b
 #instanceMethod-d
 ```
 
-```
-Model 2
-prop-e
-prop-f
-.classMethod-g
-#instanceMethod-h
-```
-
 ### Features
-- feature 1
-- feature 2
-- feature 3
+- Object Oriented
+- MVC
+- TDD
+- Mocha
+- MongoDB
+- Jade
+- Express
+- Less
+- Bootstrap
+- Maps
 
 ### Running Tests
 ```bash
@@ -35,8 +34,8 @@ $ npm test
 ```
 
 ### Contributors
-- [Chyld Medford](https://github.com/chyld)
+- [Melanie Fryman](https://github.com/mlfryman)
 
 ### License
-[MIT](LICENSE)
+- [MIT](LICENSE)
 
