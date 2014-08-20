@@ -15,6 +15,15 @@ module.exports = function(app, express){
   app.use(methodOverride());
 
   app.get('/', home.index);
+  //app.get('/about', home.about);
+  //app.get('/faq', home.faq);
+  //app.get('/contact', home.contact);
+
+  app.get('/treasures/new', treasures.init);
+  app.get('/treasures', treasures.index);
+  app.post('/treasures', treasures.create);
+  //app.get('/treasures', treasures.index);
+  //app.get('/treasures/:id', treasures.show);
 
   console.log('Express: Routes Loaded');
 };

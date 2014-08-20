@@ -1,19 +1,21 @@
 'use strict';
 
 var Mongo = require('mongodb'),
-    _        = require('lodash');
-// cp = require('child_process'),
-// fs = require('fs'),
-// path = require('path');
+    _        = require('lodash'),
+    fs = require('fs'),
+    path = require('path');
 
 function Treasure(o){
-  this.name = o.name;
-  this.loc = {name:o.loc.name, lat:parseFloat(o.loc.lat), lng:parseFloat(o.loc.lng)};
-  this.difficulty = parseInt(o.difficulty);
-  this.order = parseInt(o.order);
+  this.name = o.name[0];
+  this.loc = {};
+  this.loc.name = o.loc[0];
+  this.loc.lat = parseFloat(o.loc[1]);
+  this.loc.lng = parseFloat(o.loc[2]);
+  this.difficulty = parseInt(o.difficulty[0]);
+  this.order = parseInt(o.order[0]);
   this.photos = [];
-  this.hints = makeArray(o.hints);
-  this.tags = o.tags.split(',').map(function(t){return t.trim();});
+  this.hints = o.hints;
+  this.tags = o.tags[0].split(',').map(function(t){return t.trim();});
   this._isFound = false;
 }
 
@@ -25,9 +27,11 @@ Treasure.query = function(query, sort, cb){
   Treasure.collection.find(query, sort).toArray(cb);
 };
 
-Treasure.create = function(o, cb){
-  var t = new Treasure(o);
-  Treasure.collection.save(t, cb);
+Treasure.create = function(fields, files, cb){
+  var t = new Treasure(fields);
+  t.save(function(){
+    t.addPhotos(files, cb);
+  });
 };
 
 Treasure.findById = function(id, cb){
@@ -36,6 +40,7 @@ Treasure.findById = function(id, cb){
     cb(err, _.create(Treasure.prototype, obj));
   });
 };
+
 
 Treasure.prototype.save = function(cb){
   Treasure.collection.save(this, cb);
@@ -46,7 +51,7 @@ Treasure.found = function(id, cb){
   Treasure.collection.update({_id:id}, {$set:{isFound:true}}, cb);
 };
 
-/* Treasure.prototype.addPhoto = function(files, cb){
+Treasure.prototype.addPhoto = function(files, cb){
   var dir = __dirname + '/../static/img/' + this._id,
       exist = fs.existsSync(dir),
       self = this;
@@ -57,25 +62,15 @@ Treasure.found = function(id, cb){
 
   files.photos.forEach(function(photo){
     var ext = path.extname(photo.path),
-    rel = '/img/' + self._id + '/' + self.photos.length + ext, // relative path
-    abs = dir + '/' + self.photos.length + ext; // absolute path
+    rel = '/img/' + self._id + '/' + self.photos.length + ext,
+    abs = dir + '/' + self.photos.length + ext;
     fs.renameSync(photo.path, abs);
 
     self.photos.push(rel);
   });
 
   Treasure.collection.save(self, cb);
-}; */
+};
 
 module.exports = Treasure;
 
-// PRIVATE HELPER FUNCTIONS //
-
-function makeArray(o){
-  var keys  = Object.keys(o),
-      hints = [];
-  keys.forEach(function(key){
-    hints.push(o[key]);
-  });
-  return hints;
-}
