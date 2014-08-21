@@ -23,15 +23,13 @@ block content
             th Found
           tbody
             each treasure in treasures
-              tr(data-name='#{treasure.locName}', data-lat='#{treasure.lat}', data-lng='#{treasure.lng}', data-order='#{treasure.order}')
+              tr(data-name='#{treasure.loc.name}', data-lat='#{treasure.loc.lat}', data-lng='#{treasure.loc.lng}', data-order='#{treasure.order}')
                 td= treasure.name
-                td= treasure.locName
+                td= treasure.loc.name
                 td= treasure.difficulty
                 td= treasure.tags
                 td= treasure.order
                 td= treasure._isFound
       .col-xs-1
-
-
 block scripts
   script(src='/js/user/treasures.js')

@@ -7,14 +7,13 @@ var Mongo = require('mongodb'),
 
 function Treasure(o){
   this.name = o.name[0];
-  this.loc = {name : o.loc[0], lat: parseFloat(o.loc[1]), lng: parseFloat(o.loc[2])};
+  this.loc = {name : o.loc[0], lat: parseFloat(o.lat[0]), lng: parseFloat(o.lng[0])};
   this.difficulty = parseInt(o.difficulty[0]);
   this.order = parseInt(o.order[0]);
   this.photos = [];
   this.hints = o.hints;
   this.tags = o.tags[0].split(',').map(function(t){return t.trim();});
   this._isFound = false;
-  console.log(this);
 }
 
 Object.defineProperty(Treasure, 'collection', {
@@ -39,7 +38,6 @@ Treasure.findById = function(id, cb){
   });
 };
 
-
 Treasure.prototype.save = function(cb){
   Treasure.collection.save(this, cb);
 };
@@ -52,18 +50,18 @@ Treasure.found = function(id, cb){
 Treasure.prototype.addPhotos = function(files, cb){
   var dir    = __dirname + '/../static/img/' + this._id,
       staticRoot   = '/img/' + this._id + '/',
-      exists = fs.existsSync(dir),
+      exists = fs.existsSync(dir), //true if the directory already exists
       self   = this;
 
   if(!exists){
-    fs.mkdirSync(dir);
+    fs.mkdirSync(dir); //Nodes way of making a file, uses the fs module
   }
   files.photos.forEach(function(photo){
     var ext = path.extname(photo.path),
         fileName = self.photos.length + ext,
         rel = staticRoot + fileName,
         abs = dir + '/' + fileName;
-    fs.renameSync(photo.path, abs);
+    fs.renameSync(photo.path, abs); //move and rename
     self.photos.push(rel);
   });
   self.save(cb);

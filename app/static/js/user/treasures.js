@@ -8,6 +8,8 @@
   $(document).ready(function(){
     initMap(0, 0, 2);
     var positions = getPositions();
+    console.log('--------positions----------');
+    console.log(positions);
     positions.forEach(function(pos){
       addMarker(pos.lat, pos.lng, pos.name);
     });
@@ -20,11 +22,13 @@
   }
 
   function getPositions(){
-    var positions = $('table body tr').toArray().map(function(tr){
+    var positions = $('table tbody tr').toArray().map(function(tr){
+      console.log('-----------tr-----------');
+      console.log(tr);
       var name = $(tr).attr('data-name'),
-          lat = $(tr).attr('data-lat'),
-          lng = $(tr).attr('data-lng'),
-          pos = {name:name, lat:parseFloat(lat), lng:parseFloat(lng)};
+        lat = $(tr).attr('data-lat'),
+        lng = $(tr).attr('data-lng'),
+        pos = {name:name, lat:parseFloat(lat), lng:parseFloat(lng)};
       return pos;
     });
     return positions;
