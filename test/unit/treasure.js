@@ -72,7 +72,7 @@ describe('Treasure', function(){
 
   describe('#save', function(){
     it('should insert a new treasure into the database', function(done){
-      t1 = new Treasure({name: 'fancy wool', loc:{name:'Reykjavíc, Iceland', lat:'64.133333', lng:'-21.933333'}, difficulty:'1', order:'1', hints:{1:'hint1', 2:'hint2', 3:'hint3'}, tags:'tag1, tag2, tag3'});
+      t1 = new Treasure({name: ['fancy wool'], loc:['Reykjavíc, Iceland', '64.133333', '-21.933333'], difficulty:['1'], order:['1'], hints:['hint1', 'hint2', 'hint3'], tags:['tag1, tag2, tag3']});
       t1.save(function(){
         expect(t1._id).to.be.instanceof(Mongo.ObjectID);
         done();

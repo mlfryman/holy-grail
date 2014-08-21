@@ -11,10 +11,10 @@ block content
           form(role='form', method='post', action='/treasures/new', enctype='multipart/form-data')
             .col-xs-6
               .form-group
-                label(for='treasureName') Treasure Name
+                label(for='name') Treasure Name
                 input#name.form-control(type='text', placeholder='Treasure Name', name='name')
               .form-group
-                label(for='locName') Location Name
+                label(for='loc') Location Name
                 input#locName.form-control(type='text', name='locName', placeholder='BFE')
                 input#lat.form-control(type='hidden', name='lat')
                 input#lng.form-control(type='hidden', name='lng')

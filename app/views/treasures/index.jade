@@ -25,11 +25,11 @@ block content
             each treasure in treasures
               tr(data-name='#{treasure.locName}', data-lat='#{treasure.lat}', data-lng='#{treasure.lng}', data-order='#{treasure.order}')
                 td= treasure.name
-                td= treasure.loc.name
+                td= treasure.locName
                 td= treasure.difficulty
                 td= treasure.tags
                 td= treasure.order
-                td = treasure._isFound
+                td= treasure._isFound
       .col-xs-1
 
 

@@ -35,9 +35,12 @@
           lat = results[0].geometry.location.lat(),
           lng = results[0].geometry.location.lng();
 
-      $('#name').val(name);
+      $('#locName').val(name);
       $('#lat').val(lat);
       $('#lng').val(lng);
+
+      //var data = $('form').serialize();
+      //console.log(data);
       $('form').submit();
       console.log(name, lat, lng);
     });
