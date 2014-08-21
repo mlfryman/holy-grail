@@ -7,37 +7,37 @@ block content
           h2 Add a Treasure
     .panel.panel-default
       .panel-body
-        .row
-          form(role='form', method='post', action='/treasures/new', enctype='multipart/form-data')
+        form(role='form', method='post', action='/treasures/new', enctype='multipart/form-data')
+          .row
             .col-xs-6
               .form-group
-                label(for='name') Treasure Name
-                input#name.form-control(type='text', placeholder='Treasure Name', name='name')
-              .form-group.loc
-                label(for='loc') Location Name
-                input.name.form-control(type='text', name='loc', placeholder='BFE')
-                input#lat.form-control(type='hidden', name='lat')
-                input#lng.form-control(type='hidden', name='lng')
+                label Treasure Name
+                input.form-control(type='text', placeholder='Tourists', name='name')
+              .form-group
+                label Location
+                input.form-control(type='text', name='loc', data-loc='name', placeholder='Nashville, TN')
+                input.form-control(type='hidden', name='loc', data-loc='lat')
+                input.form-control(type='hidden', name='loc', data-loc='lng')
               .form-group#hints
-                label(for='hints') Hints
-                button.btn.btn-primary.btn-sm#addHint(type='button') Add Hint
-                input.form-control(name='hints', type='text')
+                label Hints
+                input.form-control(type='text', placeholder='click the hint button to add more hints', name='hints')
+              button#addHint.btn.btn-primary.btn-sm(type='button') Add Hint
             .col-xs-6
               .form-group
-                label(for='photos') Upload Photos
-                input.form-control#photos(type='file',name='photos', multiple=true)
+                label Upload Photo
+                input.form-control(type='file',name='photos', multiple=true)
               .form-group
-                label(for='difficulty') Difficulty
-                select#difficulty(name='difficulty')
+                label Difficulty
+                select.form-control(name='difficulty')
                   option(value='1') Easy
                   option(value='2') Medium
                   option(value='3') Hard
               .form-group
-                label(for='tags') Tags
-                input#tags.form-control(type='text', placeholder='tag 1, tag 2, tag 3', name='tags')
+                label Tags
+                input.form-control(type='text', placeholder='tag 1, tag 2, tag 3', name='tags')
               .form-group
                 label(for='order') Order
-                input#order.form-control(type='number', name='order', value='#{order}')
+                input.form-control(type='number', name='order', value='#{order}')
               button.btn.btn-success.btn-lg(type='submit') Submit
 
 block scripts

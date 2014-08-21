@@ -5,9 +5,10 @@
   "difficulty":1,
   "order":1,
   "photos":["wool1.jpg", "wool2.jpg"],
-  "hint":["hint1", "hint2", "hint3"],
+  "hints":["hint1", "hint2", "hint3"],
   "tags":["tag1", "tag2", "tag3"],
-  "_isFound":true
+  "isFound":false,
+  "isLinkable":true
 }
 {
   "_id":{"$oid":"100000000000000000000002"},
@@ -16,9 +17,10 @@
   "difficulty":3,
   "order":3,
   "photos":["gold.jpg"],
-  "hint":["hint1", "hint2", "hint3"],
+  "hints":["hint1", "hint2", "hint3"],
   "tags":["tag1", "tag2", "tag3"],
-  "_isFound":false
+  "isFound":false,
+  "isLinkable":true
 }
 {
   "_id":{"$oid":"100000000000000000000003"},
@@ -27,7 +29,8 @@
   "difficulty":2,
   "order":2,
   "photos":["weed.jpg"],
-  "hint":["hint1", "hint2", "hint3"],
+  "hints":["hint1", "hint2", "hint3"],
   "tags":["tag1", "tag2", "tag3"],
-  "_isFound":false
+  "isFound":false,
+  "isLinkable":true
 }

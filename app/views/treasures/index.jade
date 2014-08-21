@@ -4,32 +4,34 @@ block content
     #banner.page-header
       .row
         .col-xs-12
-          h1#header Treasures
-    .row
-      .col-xs-1
-      .col-xs-10
-        #map
-      .col-xs-1
-    .row
-      .col-xs-1
-      .col-xs-10
-        table.table.table-striped.table-hover
-          thead
-            th Name
-            th Location
-            th Difficulty
-            th Tags
-            th Order
-            th Found
-          tbody
-            each treasure in treasures
-              tr(data-name='#{treasure.loc.name}', data-lat='#{treasure.loc.lat}', data-lng='#{treasure.loc.lng}', data-order='#{treasure.order}')
-                td= treasure.name
-                td= treasure.loc.name
-                td= treasure.difficulty
-                td= treasure.tags
-                td= treasure.order
-                td= treasure._isFound
-      .col-xs-1
+          h2 Treasures
+    .panel.panel-default
+      .panel-body
+        .row
+          .col-xs-12#main
+            #map
+        .row
+          .col-xs-12
+            table.table.table-hover
+              thead
+                tr
+                  th!= linkBuilder.sort(query, 'name', 'Name')
+                  th!= linkBuilder.sort(query, 'loc.name', 'Location')
+                  th!= linkBuilder.sort(query, 'difficulty', 'Difficulty')
+                  th Tags
+                  th!= linkBuilder.sort(query, 'order',  'Order')
+                  th!= linkBuilder.sort(query, 'isFound',  'Found')
+              tbody
+                each treasure in treasures
+                  tr(data-name='#{treasure.loc.name}', data-lat='#{treasure.loc.lat}', data-lng='#{treasure.loc.lng}', data-order='#{treasure.order}')
+                    td!= linkBuilder.allowLink(treasure)
+                    td= treasure.loc.name
+                    td= linkBuilder.difficulty(treasure.difficulty)
+                    td!= linkBuilder.tags(query, treasure.tags)
+                        // span.label.label-info Info
+                    td= treasure.order
+                    td= treasure.isFound
+                    // td!= linkBuilder.displayFound(treasure.isFound)
+
 block scripts
   script(src='/js/user/treasures.js')
