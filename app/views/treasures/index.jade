@@ -6,8 +6,31 @@ block content
         .col-xs-12
           h1#header Treasures
     .row
-
-
+      .col-xs-1
+      .col-xs-10
+        #map
+      .col-xs-1
+    .row
+      .col-xs-1
+      .col-xs-10
+        table.table.table-striped.table-hover
+          thead
+            th Name
+            th Location
+            th Difficulty
+            th Tags
+            th Order
+            th Found
+          tbody
+            each treasure in treasures
+              tr(data-name='#{treasure.locName}', data-lat='#{treasure.lat}', data-lng='#{treasure.lng}', data-order='#{treasure.order}')
+                td= treasure.name
+                td= treasure.loc.name
+                td= treasure.difficulty
+                td= treasure.tags
+                td= treasure.order
+                td = treasure._isFound
+      .col-xs-1
 
 
 block scripts
