@@ -55,7 +55,7 @@ describe('Treasure', function(){
 
   describe('.findById', function(){
     it('should find one treasure object by it\'s ID', function(done){
-      Treasure.findById('100000000000000000000001', function(t){
+      Treasure.findById('100000000000000000000001', function(err, t){
         expect(t.name).to.equal('Knights');
         done();
       });
@@ -65,7 +65,7 @@ describe('Treasure', function(){
   describe('.found', function(){
     it('should update a treasure\'s isFound property to true', function(done){
       Treasure.found('100000000000000000000001', function(){
-        Treasure.findById('100000000000000000000001', function(t){ // add err if breaks
+        Treasure.findById('100000000000000000000001', function(err, t){ // add err if breaks
           expect(t.isFound).to.be.true;
           done();
         });

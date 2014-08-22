@@ -39,9 +39,7 @@ Treasure.create = function(fields, files, cb){
 
 Treasure.findById = function(id, cb){
   id = Mongo.ObjectID(id);
-  Treasure.collection.findOne({_id:id}, function(err, obj){
-    cb(obj);
-  });
+  Treasure.collection.findOne({_id:id}, cb);
 };
 
 Treasure.query = function(query, cb){

@@ -16,8 +16,6 @@ module.exports = function(app, express){
 
   app.get('/', home.index);
   app.get('/about', home.about);
-  app.get('/faq', home.faq);
-  app.get('/contact', home.contact);
 
   app.post('/treasures/new', treasures.create);
   app.get('/treasures/new', treasures.init);
