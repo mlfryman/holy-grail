@@ -4,14 +4,16 @@ block content
     #banner.page-header
       .row
         .col-xs-12
-          h1#header Home
+          h2#header Home
     .bs-component
       .jumbotron
-        h1 Treasure Map
+        h1 The Search for the Holy Grail
+        p#movie
+          iframe(width='420', height='315', src='//www.youtube.com/embed/iZhLDo09D68?rel=0', frameborder='0', allowfullscreen='')
         p
-          | Get your Sherlock on!
+          | You, King Arthur, are instructed by the Powers-that-Be to seek out the Holy Grail. Before you begin your quest, you must recruit additional knights to help search for the Holy Grail.
         p
-          a.btn.btn-primary.btn-lg(href='/about') About
+          a.btn.btn-primary.btn-lg(href='/treasures') Begin Quest
 
 block scripts
   script(src='/js/user/home.js')

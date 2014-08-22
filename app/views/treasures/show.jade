@@ -4,34 +4,41 @@ block content
     #banner.page-header
       .row
         .col-xs-12
-          h2 Treasure Hunt
+          h1 The Hunt is On!
     .panel.panel-default
       .panel-body
         .row
           .col-xs-6#show
-            h3 Map:
+            h3 Map
             #map(style='height:200px;', data-name='#{treasure.loc.name}', data-lat='#{treasure.loc.lat}', data-lng='#{treasure.loc.lng}')
           .col-xs-6
-            h3 Photos:
+            .row
+              .col-xs-12
+                h3 You're looking for...
+                div.alert.alert-dismissable.alert-info
+                  button.close(type='button', data-dismiss='alert') ×
+                  h4 #{treasure.name}
+            .panel.panel-primary
+              .panel-heading
+                h3.panel-title Hints
+              .panel-body
+                .row
+                  .col-xs-12
+                    ol
+                      each hint in treasure.hints
+                        li= hint
+        .row
+           .col-xs-12
+            h3 Photo Hints
             each photo in treasure.photos
-              .photo(style='background-image:url(#{photo})')
+              .photo.thumbnail(style='background-image:url(#{photo});')
         .row
           .col-xs-12
-            h3= treasure.name
-        .row
-          .col-xs-6
-            h5 Hints
-            ol
-              each hint in treasure.hints
-                li= hint
-          .col-xs-6
-        .row
-          .col-xs-12
-            form(role='form', method='post', action='/treasures/#{treasure._id}/found')
-              unless treasure.isFound
-                button.btn.btn-success.btn-lg(type='submit') Found It!!
-              else
-                a.btn.btn-primary.btn-lg(href='/treasures') View Treasures
+        form(role='form', method='post', action='/treasures/#{treasure._id}/found')
+          unless treasure.isFound
+            button.btn.btn-warning.btn-lg.btn-block(type='submit') Found It!
+          else
+            a.btn.btn-success.btn-lg.btn-block(href='/treasures') View Treasures
 
   block scripts
     script(src='/js/user/show.js')

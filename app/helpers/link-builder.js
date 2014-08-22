@@ -22,7 +22,6 @@ exports.tags = function(query, tags){
   var links = tags.map(function(tag){
     return exports.url({}, 'tag', tag, tag);
   });
-
   return links.join(', ');
 };
 
@@ -42,7 +41,7 @@ exports.difficulty = function(dif){
     case 3:
       return 'Hard';
     default:
-      return 'INSANE';
+      return 'NOPE';
   }
 };
 

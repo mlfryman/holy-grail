@@ -4,14 +4,14 @@ block content
     #banner.page-header
       .row
         .col-xs-12
-          h2 Add a Treasure
+          h2 Add a Quest Item
     .panel.panel-default
       .panel-body
         form(role='form', method='post', action='/treasures/new', enctype='multipart/form-data')
           .row
             .col-xs-6
               .form-group
-                label Treasure Name
+                label Quest Name
                 input.form-control(type='text', placeholder='Tourists', name='name')
               .form-group
                 label Location
@@ -37,7 +37,7 @@ block content
                 input.form-control(type='text', placeholder='tag 1, tag 2, tag 3', name='tags')
               .form-group
                 label(for='order') Order
-                input.form-control(type='number', name='order', value='#{order}')
+                input.form-control(type='number', name='order', value='#{order}', readonly=true)
               button.btn.btn-success.btn-lg(type='submit') Submit
 
 block scripts

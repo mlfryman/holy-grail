@@ -4,7 +4,7 @@ block content
     #banner.page-header
       .row
         .col-xs-12
-          h2 Treasures
+          h2 Quest Items
     .panel.panel-default
       .panel-body
         .row
@@ -14,7 +14,7 @@ block content
           .col-xs-12
             table.table.table-hover
               thead
-                tr
+                tr.h4
                   th!= linkBuilder.sort(query, 'name', 'Name')
                   th!= linkBuilder.sort(query, 'loc.name', 'Location')
                   th!= linkBuilder.sort(query, 'difficulty', 'Difficulty')

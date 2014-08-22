@@ -9,7 +9,7 @@
 
   $(document).ready(function(){
     directionsDisplay = new google.maps.DirectionsRenderer();
-    initMap(39.8282, -98.5795, 4);
+    initMap(39.8282, -98.5795, 15);
     directionsDisplay.setMap(map);
     var locations = getLocations();
     // console.log(locations);
