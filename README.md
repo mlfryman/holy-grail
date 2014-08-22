@@ -1,18 +1,33 @@
-## Treasure Map
+## The Search for the Holy Grail (tl;dr Treasure Map)
 ### Code Badges
 [![Build Status](https://travis-ci.org/mlfryman/treasure-map.svg)](https://travis-ci.org/mlfryman/treasure-map)
 [![Coverage Status](https://coveralls.io/repos/mlfryman/treasure-map/badge.png)](https://coveralls.io/r/mlfryman/treasure-map)
 
 ### About
-Find the treasure!
+You, King Arthur, are instructed by the Powers-that-Be to seek out the Holy Grail. Before you begin your quest, you must recruit additional knights to help search for the Holy Grail.
 
 ### Models
 ```
-Model 1
-prop-a
-prop-b
-.classMethod-c
-#instanceMethod-d
+Treasure
+----------
+name
+loc.name
+loc.lat
+loc.lng
+hints
+photos
+difficulty
+order
+isFound
+isLinkable
+
+.create
+.query
+.findById
+.found
+
+#save
+#addPhotos
 ```
 
 ### Features
