@@ -1,36 +1,72 @@
 {
   "_id":{"$oid":"100000000000000000000001"},
-  "name":"fancy wool",
-  "loc":{"name":"Reykjavíc, Iceland", "lat":64.133333, "lng":-21.933333},
+  "name":"Knights",
+  "loc":{"name":"Doune, Scotland", "lat":56.19, "lng":-4.053},
   "difficulty":1,
   "order":1,
-  "photos":["wool1.jpg", "wool2.jpg"],
-  "hints":["hint1", "hint2", "hint3"],
-  "tags":["tag1", "tag2", "tag3"],
+  "photos":["doune-castle.jpg", "knights.jpg"],
+  "hints":["Camelot", "Round Table", "Dance when ere they're able."],
+  "tags":["person", "weapon", "sacred"],
   "isFound":false,
   "isLinkable":true
 }
 {
   "_id":{"$oid":"100000000000000000000002"},
-  "name":"gold",
-  "loc":{"name":"Manila, Phillippines", "lat":14.583333, "lng":120.966667},
-  "difficulty":3,
-  "order":3,
-  "photos":["gold.jpg"],
-  "hints":["hint1", "hint2", "hint3"],
-  "tags":["tag1", "tag2", "tag3"],
+  "name":"Book of Armaments",
+  "loc":{"name":"Bodiam, England", "lat":51, "lng":0.54},
+  "difficulty":1,
+  "order":2,
+  "photos":["book-arm.jpg", "monks.gif"],
+  "hints":["Pie Iesu domine, dona eis requiem.", "Where you can find a good shrubbery.", "Plague-ridden village."],
+  "tags":["relic", "instructions", "weapon"],
   "isFound":false,
-  "isLinkable":true
+  "isLinkable":false
 }
 {
   "_id":{"$oid":"100000000000000000000003"},
-  "name":"weed",
-  "loc":{"name":"Amsterdam, Netherlands", "lat":52.366667, "lng":4.9},
+  "name":"Holy Hand Grenade of Antioch",
+  "loc":{"name":"Skye, Scotland", "lat":57.307, "lng":-6.23},
   "difficulty":2,
-  "order":2,
-  "photos":["weed.jpg"],
-  "hints":["hint1", "hint2", "hint3"],
-  "tags":["tag1", "tag2", "tag3"],
+  "order":3,
+  "photos":["holy-antioch.jpg"],
+  "hints":["First shalt thou take out the Holy Pin.", "Then shalt thou count to three, no more, no less. Three shall be the number thou shalt count, and the number of the counting shall be three. Four shalt thou not count, neither count thou two, excepting that thou then proceed to three. Five is right out.", "Once the number three, being the third number, be reached, then lobbest thou thy Holy Hand Grenade of Antioch towards thy foe, who being naughty in My sight, shall snuff it.", "O LORD, bless this Thy hand grenade that with it Thou mayest blow Thine enemies to tiny bits, in Thy mercy."],
+  "tags":["relic", "weapon", "gold"],
   "isFound":false,
-  "isLinkable":true
+  "isLinkable":false
+}
+{
+  "_id":{"$oid":"100000000000000000000004"},
+  "name":"The Rabbit of Caerbannog",
+  "loc":{"name":"Killin, Scotland", "lat":56.466, "lng":-4.318},
+  "difficulty":2,
+  "order":4,
+  "photos":["cave.jpg", "rabbit.jpg"],
+  "hints":["Cave of Caerbannog", "nasty, big, pointy teeth!", "a vicious streak a mile wide!"],
+  "tags":["gold", "passage", "animal"],
+  "isFound":false,
+  "isLinkable":false
+}
+{
+  "_id":{"$oid":"100000000000000000000005"},
+  "name":"Passage to the Other Side",
+  "loc":{"name":"River Coe, Glen Coe, Scotland", "lat":56.664082, "lng":-5.070137},
+  "difficulty":3,
+  "order":5,
+  "photos":["bridge.jpg", "bridge2.jpg"],
+  "hints":["Bridge of Death", "What is your name?", "What is your quest?", "What is your favorite color?"],
+  "tags":["passage", "blessing"],
+  "isFound":false,
+  "isLinkable":false
+}
+{
+  "_id":{"$oid":"100000000000000000000006"},
+  "name":"Holy Grail",
+  "loc":{"name":"Castle Stalker, Scotland", "lat":56.571111, "lng":-5.386111},
+  "difficulty":3,
+  "order":6,
+  "photos":["holy-grail.png", "castle-stalker.jpg"],
+  "hints":["The Castle of Aaaaarrrrrrggghhh", "Loch Laich", "French occupied", "taunting"],
+  "tags":["relic", "gold", "sacred"],
+  "isFound":false,
+  "isLinkable":false
 }
