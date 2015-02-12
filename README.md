@@ -1,7 +1,7 @@
 ## The Search for the Holy Grail (tl;dr Treasure Map)
 ### Code Badges
-[![Build Status](https://travis-ci.org/mlfryman/treasure-map.svg)](https://travis-ci.org/mlfryman/treasure-map)
-[![Coverage Status](https://coveralls.io/repos/mlfryman/treasure-map/badge.png)](https://coveralls.io/r/mlfryman/treasure-map)
+[![Build Status](https://travis-ci.org/mlfryman/holy-grail.svg?branch=master)](https://travis-ci.org/mlfryman/holy-grail)
+[![Coverage Status](https://coveralls.io/repos/mlfryman/holy-grail/badge.svg)](https://coveralls.io/r/mlfryman/holy-grail)
 
 ### About
 You, King Arthur, are instructed by the Powers-that-Be to seek out the Holy Grail. Before you begin your quest, you must recruit additional knights to help search for the Holy Grail.
